@@ -20,6 +20,7 @@ const result2 = tail(["Hello"]);
 const result3 = tail([]);
 
 // TEST CODE
+assertEqual(result[0], "Lighthouse");
 assertEqual(result.length, 2);
 assertEqual(words.length, 3);
 assertEqual(result2.length, 0);
