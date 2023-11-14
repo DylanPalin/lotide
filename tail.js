@@ -14,10 +14,13 @@ const tail = function(array) {
   return array.slice(1);
 };
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-const result1 = tail(["Hello", "Lighthouse", "Labs", "Testing"]);
-const result2 = tail([])
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+tail(words);
+const result2 = tail(["Hello"]);
+const result3 = tail([]);
 
 // TEST CODE
 assertEqual(result.length, 2);
-assertEqual(result1.length, 3);
-assertEqual(result2.length, 0)
+assertEqual(words.length, 3);
+assertEqual(result2.length, 0);
+assertEqual(result3.length, 0);
