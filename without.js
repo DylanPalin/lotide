@@ -14,7 +14,7 @@ const assertArraysEqual = function(a, b) {
   if (eqArrays(a, b)) {
     return (console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`));
   } else {
-    return (console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`)));
+    return (console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`));
   }
 };
 const without = function(source, itemsToRemove) {
@@ -28,8 +28,8 @@ const without = function(source, itemsToRemove) {
 }
 
 // TEST CODE
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+without([1, 2, 3], [1]); // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
