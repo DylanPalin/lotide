@@ -12,9 +12,9 @@ const eqArrays = function(a, b) {
 };
 const assertArraysEqual = function(a, b) {
   if (eqArrays(a, b)) {
-    (console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`));
+    console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`);
   } else {
-    (console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`));
+    console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`);
   }
 };
 const without = function(source, itemsToRemove) {
