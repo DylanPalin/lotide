@@ -10,8 +10,8 @@ const eqArrays = function(a, b) {
     return true;
   }
 };
-const assertArraysEqual = function(actual, b) {
-  if (eqArrays(a, b)) {
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
     return true;
   } else {
     return false;
