@@ -12,9 +12,9 @@ const eqArrays = function(a, b) {
 };
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
-    return true;
+    return console.log(`${actual}` === `${expected}`);
   } else {
-    return false;
+    return console.log(`${actual}` !== `${expected}`);
   }
 };
 const middle = function(array) {
