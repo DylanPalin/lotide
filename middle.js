@@ -10,11 +10,11 @@ const eqArrays = function(a, b) {
     return true;
   }
 };
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    return console.log(`${actual}` === `${expected}`);
+const assertArraysEqual = function(a, b) {
+  if (eqArrays(a, b)) {
+    return console.log(`${a} === ${b}`);
   } else {
-    return console.log(`${actual}` !== `${expected}`);
+    return console.log(`${a} !== ${b}`);
   }
 };
 const middle = function(array) {
