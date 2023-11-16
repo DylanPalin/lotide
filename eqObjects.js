@@ -1,3 +1,15 @@
+const eqArrays = function(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  } else {
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+};
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
@@ -5,8 +17,6 @@ const assertEqual = function(actual, expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   }
 };
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
   const keys1 = Object.keys(object1).sort();
   const keys2 = Object.keys(object2).sort();
@@ -14,17 +24,24 @@ const eqObjects = function(object1, object2) {
     return false;
   }
   for (let i = 0; i < keys1.length; i++) {
-    if (keys1[i] !== keys2[i] || object1[keys1[i]] !== object2[keys2[i]]) {
+    if (keys1[i] !== keys2[i]) {
+      return false;
+    }
+    if (Array.isArray(object1[keys1[i]]) && Array.isArray(object2[keys2[i]])) {
+      if (!eqArrays(object1[keys1[i]], object2[keys2[i]])) {
+        return false;
+      }
+    } else if (object1[keys1[i]] !== object2[keys2[i]]) {
       return false;
     }
   }
   return true;
 };
-
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-eqObjects(shirtObject , anotherShirtObject);
-assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-eqObjects(shirtObject , longSleeveShirtObject); // => false
-assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
+// TEST CODE
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true);
+assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true);
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+console.log(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false);
+assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false);
