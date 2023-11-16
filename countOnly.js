@@ -1,33 +1,32 @@
-const assertEqual = function(a, b) {
-  if (a === b) {
-    return console.log(`${a} === ${b}`);
-  } else {
-    return console.log(`${a} !== ${b}`);
+// FUNCTION IMPLEMENTATION
+const assertEqual = function(actual, expected) {
+  if (actual !== expected) {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  } else if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   }
 };
-
 const countOnly = function(allItems, itemsToCount) {
-  const counts = {};
-  for (let i = 0; i < allItems.length; i++) {
-    if (itemsToCount[allItems[i]]) {
-      if (counts[allItems[i]]) {
-        counts[allItems[i]]++;
+  const results = {};
+  for (const item of allItems) {
+    if (itemsToCount[item]) { 
+      if (results[item]) {
+        results[item] += 1;
       } else {
-        counts[allItems[i]] = 1;
+        results[item] = 1;
       }
     }
   }
-  return counts;
+  return results;
 };
-
 const firstNames = [
   "Karl",
-  "Samlima",
+  "Salima",
   "Agouhanna",
   "Fang",
   "Kavith",
   "Jason",
-  "Samlima",
+  "Salima",
   "Fang",
   "Joe"
 ];
@@ -37,4 +36,4 @@ const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": t
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
-assertEqual(result1["Aghouhanna"], undefined);
+assertEqual(result1["Agouhanna"], undefined);
