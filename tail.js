@@ -1,4 +1,7 @@
 const tail = function(array) {
+  if (array.length <= 1) {
+    return undefined;
+  }
   return array.slice(1);
 };
 
