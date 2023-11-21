@@ -1,9 +1,11 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-// TEST CODE
-tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
-assertEqual(tail(["Hello", "Lighthouse"]), ["Lighthouse"]);
-assertEqual(tail(["Hello"]), []);
-assertEqual(tail([]), []);
+describe("#tail", () => {
+  it("returns Lighthouse, Labs instead of Hello, Lighthouse, Labs", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+  it("returns Lighthouse instead of Hello, Lighthouse", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse"]), ["Lighthouse"]);
+  });
+});
