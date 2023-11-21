@@ -26,9 +26,9 @@ This project was created and published by Dylan as part of my learnings at Light
 
 The following functions are currently implemented:
 
-* `assertArraysEqual`: takes in two arrays and console.log an appropriate message to the console.
-* `assertEqual`: takes in two primitive values and console.log an appropriate message to the console.
-* `assertObjectsEqual`: takes in two objects and console.log an appropriate message to the console.
+* `assertArraysEqual`: takes in two arrays and compares them for equality, then logs the result.
+* `assertEqual`: takes in two primitive values and compares them for equality, the logs the result.
+* `assertObjectsEqual`: takes in two objects and compares them for equality, then logs the result. 
 * `countLetters`: takes in a string and returns an object with the count of each letter.
 * `countOnly`: takes in an array and an object and returns an object with the count of each item in the array that is specified in the object.
 * `eqArrays`: takes in two arrays and returns true if they are equal.
