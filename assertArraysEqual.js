@@ -17,6 +17,5 @@ const assertArraysEqual = function(a, b) {
     console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`);
   }
 };
-// TEST CODE
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [1, 2, 3, 4]);
+
+module.exports = assertArraysEqual;
