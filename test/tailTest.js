@@ -1,8 +1,8 @@
 const assertEqual = require('../assertEqual');
+const tail = require('../tail');
 
 // TEST CODE
-assertEqual(result[0], "Lighthouse");
-assertEqual(result.length, 2);
-assertEqual(words.length, 3);
-assertEqual(result2.length, 0);
-assertEqual(result3.length, 0);
+tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(tail(["Hello", "Lighthouse", "Labs"]), "Labs");
+assertEqual(tail(["Hello"]), "Hello");
+assertEqual(tail([]));
